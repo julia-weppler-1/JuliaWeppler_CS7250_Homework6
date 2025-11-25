@@ -9,7 +9,7 @@ from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go
 import plotly.express as px
 
-df = pd.read_csv("assets/goodreads_library_export.csv")
+df = pd.read_csv("../assets/goodreads_library_export.csv")
 
 df["Date Added"] = pd.to_datetime(df["Date Added"], errors="coerce")
 
@@ -610,6 +610,7 @@ def update_marimekko(page_range):
     )
 
     return fig
+server = app.server
 
 if __name__ == "__main__":
     app.run(debug=True)
